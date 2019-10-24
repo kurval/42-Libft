@@ -19,6 +19,6 @@ char	*ft_strnew(size_t size)
 	if (!(mem = (void*)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	mem[size] = '\0';
-	ft_bzero(mem, size);
+	ft_strclr(mem);
 	return (mem);
 }

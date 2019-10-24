@@ -15,6 +15,18 @@
 #include <string.h>
 #include <stdlib.h>
 
+void	putx(char *s)
+{
+	*s = 'x';
+}
+
+void	puty2(unsigned int n, char *s)
+{
+	n = 0;
+	s[n] = 'y';
+}
+
+
 int	main(void)
 {
 	printf("\n*******************************************************\n");
@@ -374,5 +386,20 @@ int	main(void)
 	char *mem;
 	mem = ft_memalloc(5);
 	printf("EXPECTED (): %s\n", mem);
+
+	printf("\n*******************************************************\n");
+	printf("FT_STRITER TEST \n");
+	
+	char str21[] = "12345";
+	ft_striter(str21, &putx);
+	printf("EXPECTED (xxxxx): %s\n", str21);
+
+	printf("\n*******************************************************\n");
+	printf("FT_STRITERI TEST \n");
+
+	char str22[] = "12345";
+	ft_striteri(str22, &puty2);
+	printf("EXPECTED (yyyyy): %s\n", str22); 
+
 	return (0);
 }
