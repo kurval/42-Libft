@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:47:18 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/22 14:25:07 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/25 16:33:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0' && s[i] == '\0')
 		return (&begin[i]);
-	return (0);
+	return (NULL);
 }

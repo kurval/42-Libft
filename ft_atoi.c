@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 10:42:06 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/21 12:35:42 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/25 10:29:24 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static	int		starting_point(const char *str)
 	int i;
 
 	i = 0;
-	while (str[i] == '\n' || str[i] == '\t' || \
+	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\f' || \
 			str[i] == '\v' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	return (i);

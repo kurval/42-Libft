@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:35:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/24 15:00:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/25 15:07:10 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 #include <string.h>
 #include <stdlib.h>
 
-void	putx(char *s)
+static void	putx(char *s)
 {
 	*s = 'x';
 }
 
-void	puty2(unsigned int n, char *s)
+static void puty2(unsigned int n, char *s)
 {
 	n = 0;
 	s[n] = 'y';
 }
-
 
 int	main(void)
 {
@@ -292,7 +291,7 @@ int	main(void)
 	printf("FT_PUTNBR_FD TEST \n");
 
 	printf("maximum negative int EXPECTED (-2147483648):\n");
-	ft_putnbr_fd(-2147483648, 1);
+	ft_putnbr_fd(-57, 1);
 
 	printf("\n*******************************************************\n");
 	printf("FT_STRSTR TEST \n");
@@ -389,7 +388,7 @@ int	main(void)
 
 	printf("\n*******************************************************\n");
 	printf("FT_STRITER TEST \n");
-	
+
 	char str21[] = "12345";
 	ft_striter(str21, &putx);
 	printf("EXPECTED (xxxxx): %s\n", str21);
@@ -399,7 +398,6 @@ int	main(void)
 
 	char str22[] = "12345";
 	ft_striteri(str22, &puty2);
-	printf("EXPECTED (yyyyy): %s\n", str22); 
-
+	printf("EXPECTED (yyyyy): %s\n", str22);
 	return (0);
 }
