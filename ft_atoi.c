@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 static	int		starting_point(const char *str)
 {
 	int i;
