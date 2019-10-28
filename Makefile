@@ -24,11 +24,14 @@ CC = gcc
 
 MAIN = main.c
 
+NORM = norminette
+
 RUN = ./a.out
 
 all: $(NAME)
 
 $(NAME):
+	$(NORM) $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJECTS)
 	$(CC) $(FLAGS) $(MAIN) $(NAME)

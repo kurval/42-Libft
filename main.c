@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:35:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/25 15:07:10 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/28 18:36:37 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,10 +146,6 @@ int	main(void)
 	printf("org is ORGINAL: %s\n", orginal);
 	printf("dup is EXPECTED (ORGINAL): %s\n", duplicate);
 
-	const char *empty = NULL;
-
-	printf("orginal is NULL/EXPECTED (null): %s\n", ft_strdup(empty));
-
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(10) FT_STRCPY TEST \n");
 
@@ -160,8 +156,6 @@ int	main(void)
 
 	printf("source is: %s\n", source);
 	printf("DESTINATION/ EXPECTED (SOURCE): %s\n", dest);
-
-	printf("source is NULL/EXPECTED (null): %s\n", ft_strcpy(dest, empty));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(11) FT_STRNCPY TEST \n");

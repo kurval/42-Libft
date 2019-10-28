@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 15:35:12 by vkurkela          #+#    #+#             */
+/*   Updated: 2019/10/28 16:28:04 by vkurkela         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int		ft_count_tab(const char *str, char c)
@@ -36,6 +48,16 @@ static int		ft_count_str(const char *str, char c)
 	return (len);
 }
 
+static char		**allocate_tab(char const *s, char c)
+{
+	char	**tab;
+
+	if (!s || (!(tab = (char **)malloc(sizeof(char *) * \
+						(ft_count_tab(s, c) + 1)))))
+		return (NULL);
+	return (tab);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	int		j;
@@ -44,15 +66,15 @@ char			**ft_strsplit(char const *s, char c)
 
 	j = 0;
 	i = 0;
-	if (!s || (!(tab = (char **)malloc(sizeof(char *) * (ft_count_tab(s, c) + 1)))))
-		return (NULL);
+	tab = allocate_tab(s, c);
 	while (*s)
 	{
 		while (*s == c && *s)
 			s++;
 		if (*s != c && *s)
 		{
-			if (!(tab[j] = (char *)malloc(sizeof(char) * (ft_count_str(s, c) + 1))))
+			if (!(tab[j] = (char *)malloc(sizeof(char) * \
+							(ft_count_str(s, c) + 1))))
 				return (NULL);
 			while (*s && *s != c)
 				tab[j][i++] = (char)*s++;

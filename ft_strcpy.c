@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:19:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/21 09:53:31 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/28 18:38:25 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strcpy(char *dst, const char *src)
 	int i;
 
 	i = 0;
-	if ((dst == NULL) || (src == NULL))
-		return (NULL);
 	while (src[i] != '\0')
 	{
 		dst[i] = src[i];

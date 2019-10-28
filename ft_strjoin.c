@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 10:01:03 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/25 10:04:40 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/28 18:30:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char*)malloc(sizeof(*str) * len);
-	if (str)
-	{
-		ft_strcpy(str, (char*)s1);
-		str = ft_strcat(str, (char*)s2);
-		return (str);
-	}
-	return (NULL);
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(str = (char*)malloc(sizeof(*str) * len)))
+		return (NULL);
+	ft_strcpy(str, (char*)s1);
+	str = ft_strcat(str, (char*)s2);
+	return (str);
 }
