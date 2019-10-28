@@ -12,8 +12,6 @@
 
 #include <stdio.h>
 #include "libft.h"
-#include <string.h>
-#include <stdlib.h>
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_YELLOW  "\x1b[33m"
@@ -354,10 +352,17 @@ int	main(void)
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("FT_MEMALLOC TEST \n");
 
-	char *str7;
-	str7 = ft_memalloc(5);
-	printf("EXPECTED (): %s\n", str7);
+	char *str7 = ft_memalloc(5);
 
+	if (str7 == NULL)
+		printf("Couldn't allocate memory\n");
+	else
+		ft_memset(str7, 0, 5*sizeof(char));
+		printf("Memory allocation succesful\n");
+
+	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
+	printf("FT_MEMDEL TEST \n");
+	
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("FT_STRCLR TEST \n");
 
