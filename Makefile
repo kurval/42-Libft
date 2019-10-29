@@ -6,7 +6,7 @@
 #    By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2019/10/29 14:31:25 by vkurkela         ###   ########.fr        #
+#    Updated: 2019/10/29 15:44:11 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,9 @@ $(NAME):
 clean:
 	/bin/rm -f $(OBJECTS)
 
-fclean:
+fclean: clean
 	/bin/rm -f $(NAME)
 
-re: fclean clean all
+re: fclean all
 
 .PHONY: all clean fclean re
