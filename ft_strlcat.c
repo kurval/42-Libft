@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 09:46:37 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/28 15:32:03 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/29 14:30:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[len + i] = src[i];
 		i++;
 	}
-	if ((int)dstsize != 0)
+	if (dstsize != 0)
 	{
 		dst[len + i] = '\0';
 		if ((int)dstsize < len)
-			return (ft_strlen(src) + (int)dstsize);
+			return (ft_strlen(src) + dstsize);
 		return (ft_strlen(src) + len);
 	}
 	return (ft_strlen(src));

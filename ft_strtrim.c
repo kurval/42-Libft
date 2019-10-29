@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 15:33:39 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/28 19:50:15 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/29 09:36:33 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,14 @@ char		*ft_strtrim(char const *s)
 	int		len;
 
 	i = 0;
-	len = calc_len(s);
-	if (!s)
-		return (NULL);
-	if (!(trim = (char*)malloc(sizeof(*trim) * len + 1)))
-		return (NULL);
-	check_whitespaces(trim, s);
-	return (trim);
+	len = 0;
+	if (s)
+	{
+		len = calc_len(s);
+		if (!(trim = (char*)malloc(sizeof(*trim) * len + 1)))
+			return (NULL);
+		check_whitespaces(trim, s);
+		return (trim);
+	}
+	return (NULL);
 }

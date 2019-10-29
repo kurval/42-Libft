@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 10:04:03 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/28 19:29:22 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/29 09:33:16 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*copy;
 
 	i = 0;
-	len = ft_strlen((char*)s);
-	if (!(copy = (char*)malloc(sizeof(*copy) * len + 1)))
-		return (NULL);
+	len = 0;
 	if (s && f)
 	{
+		len = ft_strlen((char*)s);
+		if (!(copy = (char*)malloc(sizeof(*copy) * len + 1)))
+			return (NULL);
 		while (s[i] != '\0')
 		{
 			copy[i] = f(i, s[i]);
