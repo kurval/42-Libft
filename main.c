@@ -44,6 +44,12 @@ static void puty2(unsigned int n, char *s)
 	s[n] = 'y';
 }
 
+void	del_cont(void *content, size_t n)
+{
+	(void)n;
+	free(content);
+}
+
 int	main(void)
 {
 	
@@ -546,6 +552,73 @@ int	main(void)
 	ft_putnbr_fd(-2147483648, 1);
 	printf("\n");
 	printf("\n");
+
+	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
+	printf("FT_LSTNEW TEST \n");
+	
+	void const *content;
+	size_t content_size;
+
+	t_list	*list;
+	
+	content = "Hive is a nice school!";
+	content_size = 21;
+
+	list = ft_lstnew(content, content_size);
+
+	printf("New link EXPEXTED (Hive is a nice school): %s\n", list->content);
+
+	content = NULL;
+	list = ft_lstnew(content, content_size);
+
+	printf("New link EXPEXTED (null): %s\n", list->content);
+
+	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
+	printf("FT_LSTDELONE TEST \n");
+	
+	t_list	*list2;
+
+	content = "Hive";
+	content_size = 4;
+	
+	list2 = ft_lstnew(content, content_size);
+
+	ft_lstdelone(&list2, &del_cont);
+	
+	printf("New link EXPEXTED (null): %s\n", list2->content);
+
+	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
+	printf("FT_LSTDEL TEST \n");
+/*
+	t_list	*list3;
+	t_list	*list4;
+	t_list	*list5;
+
+	content = "Hive";
+	content_size = 4;
+	
+	list3 = ft_lstnew(content, content_size);
+
+	content = "42";
+	content_size = 2;
+	
+	list4 = ft_lstnew(content, content_size);
+
+	content = "Haudi";
+	content_size = 5;
+	
+	list5 = ft_lstnew(content, content_size);
+
+	list3->next = list4;
+	list4->next = list5;
+	
+	ft_lstdel(&list3, &del_cont);
+
+	printf("New link EXPEXTED (null): %s\n", list3->content);
+	printf("New link EXPEXTED (null): %s\n", list4->content);
+	printf("New link EXPEXTED (null): %s\n", list5->content);
+
+*/
 
 	return (0);
 }
