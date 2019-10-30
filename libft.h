@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:34:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/29 12:26:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/30 11:41:20 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "string.h"
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

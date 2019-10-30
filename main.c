@@ -6,12 +6,13 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:35:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/29 13:28:11 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/30 11:42:23 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_YELLOW  "\x1b[33m"
@@ -447,7 +448,7 @@ int	main(void)
 	str50 = "Hive is a nice school";
 	printf("String is: %s\n", str50);
 	
-	printf("String is EXPECTED (is a nice scool): %s\n", ft_strsub(str50, 5, 16));
+	printf("String is EXPECTED (is a nice): %s\n", ft_strsub(str50, 5, 9));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(41) FT_STRJOIN TEST \n");

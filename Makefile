@@ -6,7 +6,7 @@
 #    By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2019/10/29 15:44:11 by vkurkela         ###   ########.fr        #
+#    Updated: 2019/10/29 15:32:18 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,20 +29,11 @@ FLAGS = -Wall -Wextra -Werror -I$(HEADERS)
 
 CC = gcc
 
-MAIN = main.c
-
-NORM = norminette
-
-RUN = ./a.out
-
 all: $(NAME)
 
 $(NAME):
-	$(NORM) $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJECTS)
-	$(CC) $(FLAGS) $(MAIN) $(NAME)
-	$(RUN)
 
 clean:
 	/bin/rm -f $(OBJECTS)
