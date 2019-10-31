@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:35:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/30 11:42:23 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/31 10:15:05 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	del_cont(void *content, size_t n)
 
 int	main(void)
 {
-	
+
 	printf(ANSI_COLOR_GREEN "\nPART 1 - LIBC FUNCTIONS\n\n" ANSI_COLOR_RESET);
-		
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(1) FT_MEMSET TEST \n");
-	
+
 	char memstr[] = "Hello world!";
 	printf("String is: %s\n", memstr);
 	printf("EXPECTED (......world!): %s\n", ft_memset(memstr, '.', 6));
@@ -65,7 +65,7 @@ int	main(void)
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 
 	printf("(2) FT_BZERO TEST \n");
-	
+
 	char zerostr[] = "Helloworld!";
 	printf("String is: %s\n", zerostr);
 	ft_bzero(zerostr, 4);
@@ -75,7 +75,7 @@ int	main(void)
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 
 	printf("(3) FT_MEMCPY TEST \n");
-	
+
 	char dest5[] = "Hellou";
 	char sour2[] = "World!";
 	printf("Dest is: %s\n", dest5);
@@ -84,7 +84,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(4) FT_MEMCCPY TEST \n");
-	
+
 	char dest17[] = "Helou!";
 	char sour18[] = "World!";
 	printf("Dest is: %s\n", dest17);
@@ -100,15 +100,15 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(5) FT_MEMMOVE TEST \n");
-	
+
 	char str11[] = "abcde";
 	printf("Dest is: %s\n", str11);
 	ft_memmove(str11+2, str11, 3);
 	printf("EXPECTED (ababc): %s\n", str11);
-	
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(6) FT_MEMCHR TEST \n");
-	
+
 	char str10[] = "Hive is a nice school!";
 	printf("STR: %s\n", str10);
 	printf("EXPECTED 'c' (ce school!): %s\n", ft_memchr(str10, 'c', 22));
@@ -116,15 +116,15 @@ int	main(void)
 	char str12[] = "Hive is a nice school!";
 	printf("STR: %s\n", str12);
 	printf("EXPECTED not found 'w' (null): %s\n", ft_memchr(str12, 'w', 22));
-	
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(7) FT_MEMCMP TEST \n");
-	
+
 	char str13[] = "abcDef";
 	char str14[] = "abcdEf";
 	printf("STR1: %s STR2: %s\n", str13, str14);
 	printf("EXPECTED (-32): %d\n", ft_memcmp(str13, str14, 5));
-	
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(8) FT_STRLEN TEST \n");
 
@@ -134,7 +134,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(9) FT_STRDUP TEST \n");
-	
+
 	const char *orginal;
 	const char *duplicate;
 
@@ -172,7 +172,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(12) FT_STRCAT TEST \n");
-	
+
 	char str1[] = "Hello";
 	char str2[] = "World!";
 	printf("s1: %s s2: %s\n", str1, str2);
@@ -180,7 +180,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(13) FT_STRNCAT TEST \n");
-	
+
 	char str3[] = "Hello";
 	char str4[] = "World!";
 	printf("s1: %s s2: %s\n", str3, str4);
@@ -188,7 +188,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(14) FT_STRLCAT TEST \n");
-	
+
 	char dst5[] = "Hellou";
 	char src6[] = "World!";
 	size_t n;
@@ -196,7 +196,7 @@ int	main(void)
 	printf("s1: %s s2: %s dstsize: %zu\n", dst5, src6, n);
 	printf("EXPECTED (12): %zu\n", ft_strlcat(dst5, src6, n));
 	printf("REAL EXPECTED (12): %zu\n", strlcat(dst5, src6, n));
-	
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(15) FT_STRCHR TEST \n");
 
@@ -218,7 +218,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(17) FT_STRSTR TEST \n");
-   
+
 	printf("Haystack: %s Needle: nice\n", str);
 	printf("EXPECTED (nice school): %s\n", ft_strstr(str, "nice"));
 	printf("Needle not found EXPECTED (null): %s\n", ft_strstr(str, "notfound"));
@@ -235,20 +235,20 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(19) FT_STRCMP TEST \n");
-	
+
 	const char *s1 = "ABCDEFG";
 	const char *s2 = "abcdefg";
-	
+
 	printf("str1 is less than str2 EXPECTED (-32): %d \n", ft_strcmp(s1, s2));
-	
+
 	s1 = "abcdefg";
 	s2 = "ABCDEFG";
-	
+
 	printf("str2 is less than str1 EXPECTED (32): %d \n", ft_strcmp(s1, s2));
 
 	s1 = "abcdefg";
 	s2 = "abcdefg";
-	
+
 	printf("str1 is equal to str2 EXPECTED (0): %d \n", ft_strcmp(s1, s2));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
@@ -271,10 +271,10 @@ int	main(void)
 	printf("whitespaces and '+' EXPECTED (134542): %d \n", ft_atoi(" 	\n +134542"));
 	printf("whitespaces and '-' EXPECTED (-134542: %d \n", ft_atoi(" 	\n -134542"));
 	printf("maximum negative int EXPECTED (-2147483648): %d \n", ft_atoi("-2147483648"));
-	
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(22) FT_ISALPHA TEST \n");
-	
+
 	unsigned char c;
     c = 'Q';
     printf("Result when uppercase alphabet is passed EXPECTED (1): %d \n", ft_isalpha(c));
@@ -287,7 +287,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(23) FT_ISDIGIT TEST \n");
-	
+
     c = '9';
     printf("Result when number is passed EXPECTED (1): %d \n", ft_isdigit(c));
     c = 'r';
@@ -297,7 +297,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(24) FT_ISALNUM TEST \n");
-	
+
     c = '9';
     printf("Result when number is passed EXPECTED (1): %d \n", ft_isalnum(c));
     c = 'r';
@@ -361,7 +361,7 @@ int	main(void)
 	del = ft_strdup("asdasdasd");
 	printf("String is: %s\n", del);
 	ft_memdel((void*)&del);
-	printf("String is EXPECTED (null): %s\n", del);	
+	printf("String is EXPECTED (null): %s\n", del);
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(31) FT_STRNEW TEST \n");
@@ -381,7 +381,7 @@ int	main(void)
 	del1 = ft_strdup("asdasdasd");
 	printf("String is: %s\n", del1);
 	ft_strdel(&del1);
-	printf("String is EXPECTED (null): %s\n", del1);	
+	printf("String is EXPECTED (null): %s\n", del1);
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(33) FT_STRCLR TEST \n");
@@ -423,28 +423,28 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(38) FT_STREQU TEST \n");
-	
+
 	const char *s3 = "gfedcba";
 	const char *s4 = "abcdefg";
-	
+
 	printf("str1 is differ than str2 EXPECTED (0): %d \n", ft_strequ(s3, s4));
-	
+
 	s3 = "abcdefg";
 	s4 = "abcdefg";
-	
+
 	printf("str2 is equal with str1 EXPECTED (1): %d \n", ft_strequ(s3, s4));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(39) FT_STRENQU TEST \n");
-	
+
 	s3 = "gfedcba";
 	s4 = "abcdefg";
-	
+
 	printf("str1 is differ than str2 EXPECTED (0): %d \n", ft_strnequ(s3, s4, 4));
-	
+
 	s3 = "abcdefg";
 	s4 = "abcdyfg";
-	
+
 	printf("str2 is equal with str1 EXPECTED (1): %d \n", ft_strnequ(s3, s4, 4));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
@@ -453,7 +453,7 @@ int	main(void)
 	char const *str50;
 	str50 = "Hive is a nice school";
 	printf("String is: %s\n", str50);
-	
+
 	printf("String is EXPECTED (is a nice): %s\n", ft_strsub(str50, 5, 9));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
@@ -462,11 +462,11 @@ int	main(void)
 	char const *str51;
 	str51 = "Hive is a ";
 	printf("String 1 is: %s\n", str51);
-	
+
 	char const *str52;
 	str52 = "nice school";
 	printf("String 2 is: %s\n", str52);
-	printf("String is EXPECTED (Hive is is a nice scool): %s\n", ft_strjoin(str51, str52));	
+	printf("String is EXPECTED (Hive is is a nice scool): %s\n", ft_strjoin(str51, str52));
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(42) FT_STRTRIM TEST \n");
@@ -482,7 +482,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(43) FT_STRSPLIT TEST \n");
-	
+
 	char **tab;
 	char str33[] = "***seppoo***suppo**tuppo";
 	int h;
@@ -517,7 +517,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(47) FT_PUTENDL TEST \n");
-	
+
 	printf("EXPECTED (abscdefg!@#2434) and linebreak:\n");
 	ft_putendl("abscdefg!@#2434");
 
@@ -535,7 +535,7 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("(50) FT_PUTSTR_FD TEST \n");
-	
+
 	printf("EXPECTED (ABCD123!@#):\n");
 	ft_putstr_fd("ABCD123!@#", 1);
 
@@ -553,14 +553,16 @@ int	main(void)
 	printf("\n");
 	printf("\n");
 
+	printf(ANSI_COLOR_GREEN "\nBONUS PART\n\n" ANSI_COLOR_RESET);
+
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("FT_LSTNEW TEST \n");
-	
+
 	void const *content;
 	size_t content_size;
 
 	t_list	*list;
-	
+
 	content = "Hive is a nice school!";
 	content_size = 21;
 
@@ -575,50 +577,47 @@ int	main(void)
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("FT_LSTDELONE TEST \n");
-	
+
 	t_list	*list2;
 
 	content = "Hive";
 	content_size = 4;
-	
+
 	list2 = ft_lstnew(content, content_size);
 
 	ft_lstdelone(&list2, &del_cont);
-	
-	printf("New link EXPEXTED (null): %s\n", list2->content);
+
+	printf("New link EXPEXTED (0x0): %p\n", list2);
 
 	printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
 	printf("FT_LSTDEL TEST \n");
-/*
+
 	t_list	*list3;
 	t_list	*list4;
 	t_list	*list5;
 
 	content = "Hive";
 	content_size = 4;
-	
+
 	list3 = ft_lstnew(content, content_size);
 
 	content = "42";
 	content_size = 2;
-	
+
 	list4 = ft_lstnew(content, content_size);
 
 	content = "Haudi";
 	content_size = 5;
-	
+
 	list5 = ft_lstnew(content, content_size);
 
 	list3->next = list4;
 	list4->next = list5;
-	
+	list5->next = NULL;
+
 	ft_lstdel(&list3, &del_cont);
 
-	printf("New link EXPEXTED (null): %s\n", list3->content);
-	printf("New link EXPEXTED (null): %s\n", list4->content);
-	printf("New link EXPEXTED (null): %s\n", list5->content);
-
-*/
+	printf("New link EXPEXTED (0x0): %p\n", list3);
 
 	return (0);
 }
