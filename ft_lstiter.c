@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 09:47:09 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/31 09:47:30 by vkurkela         ###   ########.fr       */
+/*   Created: 2019/10/31 12:24:38 by vkurkela          #+#    #+#             */
+/*   Updated: 2019/10/31 12:36:50 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_list	*temp;
-
-	while (*alst)
+	while (lst)
 	{
-		temp = (*alst)->next;
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = temp;
+		f(lst);
+		lst = lst->next;
 	}
-	*alst = NULL;
 }
