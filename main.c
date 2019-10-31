@@ -6,7 +6,7 @@
 /*   By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:35:05 by vkurkela          #+#    #+#             */
-/*   Updated: 2019/10/31 10:15:05 by vkurkela         ###   ########.fr       */
+/*   Updated: 2019/10/31 11:26:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -618,6 +618,36 @@ int	main(void)
 	ft_lstdel(&list3, &del_cont);
 
 	printf("New link EXPEXTED (0x0): %p\n", list3);
+
+printf(ANSI_COLOR_YELLOW "\n*******************************************************\n" ANSI_COLOR_RESET);
+	printf("FT_LSTADD TEST \n");
+
+	t_list	*head;
+	t_list	*list6;
+	t_list	*list7;
+
+	content = "Head";
+	content_size = 4;
+
+	head = ft_lstnew(content, content_size);
+
+	content = "Hive";
+	content_size = 4;
+
+	list6 = ft_lstnew(content, content_size);
+
+	content = "Haudi";
+	content_size = 5;
+
+	list7 = ft_lstnew(content, content_size);
+
+	head->next = list6;
+	list6->next = list7;
+	list7->next = NULL;
+
+	printf("Head is before EXPEXTED (Head): %s\n", head->content);
+	ft_lstadd(&head, list6);
+	printf("Head is after EXPEXTED (Head): %s\n", head->content);
 
 	return (0);
 }
