@@ -31,6 +31,8 @@ int ft_atoi_base(const char *str, int str_base)
 	nb = 0;
 	sign = 1;
 	i = 0;
+	if (!str || (str_base < 2 || str_base > 16))
+		return (0);
 	while (ft_iswhitespace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')

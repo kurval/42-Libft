@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <limits.h>
+#include "libft.h"
 
 int		size(long nb, int base)
 {
@@ -32,11 +32,8 @@ char	*ft_itoa_base(int value, int base)
 	i = size(nb, base);
 	str = (char*)malloc(sizeof(char) * (i + 1));
 	str[i--] = '\0';
-	if (nb == 0)
-	{
-		str[0] = '0';
-		return (str);
-	}
+	if (value == 0 || base < 2 || base > 16)
+		return (ft_strdup("0"));	
 	if (nb < 0 && base == 10)
 	{
 		str[0] = '-';
@@ -55,7 +52,7 @@ char	*ft_itoa_base(int value, int base)
 
 int	main(void)
 {
-	printf("%s\n", ft_itoa_base(31, 16));
+	printf("%s\n", ft_itoa_base(31, 17));
 
 	return (0);	
 }
