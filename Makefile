@@ -6,7 +6,7 @@
 #    By: vkurkela <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2020/01/09 11:27:46 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/01/09 11:40:57 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC = ft_isprint.c ft_memmove.c ft_putstr.c ft_strdup.c ft_strmapi.c ft_strsplit
 		ft_isalpha.c ft_memcmp.c ft_putendl_fd.c ft_strcmp.c ft_strlcat.c ft_strnew.c ft_toupper.c \
 		ft_isascii.c ft_memcpy.c ft_putnbr.c ft_strcpy.c ft_strlen.c ft_strnstr.c \
 		ft_isdigit.c ft_memdel.c ft_putnbr_fd.c ft_strdel.c ft_strmap.c ft_strrchr.c \
-		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c
+		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_itoa_base.c
 
 HEADERS = libft.h
 
